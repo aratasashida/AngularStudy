@@ -1,0 +1,14 @@
+<ng-container *ngIf="user$ | async as user; else userFetching">
+    <h1>{{user.first_name}}{{user.last_name}}</h1>
+
+    <dl>
+        <dt>Email</dt>
+        <dt>{{user.email}}</dt>
+        <dt>Avatar</dt>
+        <dd><img [src]="user.avatar" alt="userAvatar"></dd>
+    </dl>
+</ng-container>
+
+<ng-template #userFetching>
+    <div>...loading</div>
+</ng-template>
