@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
-import { HttpClient } from '@angular/common/http';
+import { UserListUseCase } from './service/user-list.usecase';
+import { UserListFilter } from './models/state';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
 
-  users: User[] = [];
+  users$ = this.userList.users$;
+  userListFilter$ = this.userList.filter$;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private userList: UserListUseCase
+  ) { }
 
   ngOnInit() {
-    this.http
-      .get<{ data: User[] }>('https://reqres.in/api/users')
-      .subscribe(resp => {
-        console.log(resp);
-        this.users = resp.data;
-      });
+    this.userList.fetchUsers().then(r => r);
+  }
+
+  setUserListFilter(value: UserListFilter) {
+    this.userList.setNameFilter(value.nameFilter);
   }
 }
