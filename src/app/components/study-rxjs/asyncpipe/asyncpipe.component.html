@@ -1,1 +1,12 @@
-<div>{{value$ | async}}</div>
+<!--ng-containerタグはAngularのテンプレート内でだけ使える特殊なタグ。-->
+<!--テンプレート内で任意の範囲をブロック化するために使うが、DOMへレンダリングされるときには除去される-->
+<!--ng-ifやng-forのような構造ディレクティブを使うときによく用いられる-->
+<!--ngif-as構文はngifに渡された式の評価結果をテンプレート内で新しい変数に代入する機能-->
+<ng-container *ngIf="state$ | async as state; else nullState">
+    <div>1. {{state.value}}</div>
+    <div>2. {{state.value}}</div>
+</ng-container>
+
+<ng-template #nullState>
+    state is null
+</ng-template>
