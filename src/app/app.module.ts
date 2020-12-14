@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailPageComponent } from './components/study-refactaring/user-detail-page/user-detail-page.component';
 import { UsersComponent } from './components/study-refactaring/users.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { StudyRxjsComponent } from './components/study-rxjs/study-rxjs.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { RxjsComponent } from './components/rxjs/rxjs.component';
     UserDetailPageComponent,
     UsersComponent,
     PageNotFoundComponent,
-    RxjsComponent,
+    StudyRxjsComponent,
   ],
   imports: [
     BrowserModule,

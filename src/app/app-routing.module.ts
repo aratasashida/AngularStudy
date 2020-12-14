@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { UserDetailPageComponent } from './components/study-refactaring/user-detail-page/user-detail-page.component';
 import { UsersComponent } from './components/study-refactaring/users.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { StudyRxjsComponent } from './components/study-rxjs/study-rxjs.component';
 
 @NgModule({
   imports: [
@@ -22,8 +22,8 @@ import { RxjsComponent } from './components/rxjs/rxjs.component';
         ]
       },
       {
-        path: 'rxjs',
-        component: RxjsComponent
+        path: 'study-rxjs',
+        component: StudyRxjsComponent
       },
       {
         path: '**', component: PageNotFoundComponent
