@@ -4,10 +4,10 @@ import { UserListFilter } from '../../models/state';
 
 @Component({
   selector: 'app-study-refactaring',
-  templateUrl: './study-refactoring.component.html',
-  styleUrls: ['./study-refactoring.component.scss']
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss']
 })
-export class StudyRefactoringComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   users$ = this.userList.users$;
   userListFilter$ = this.userList.filter$;
