@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
-import { UserDetailUseCase } from '../../service/user-detail-usecase.service';
+import { UserDetailUseCase } from '../../../service/user-detail-usecase.service';
 
 @Component({
   templateUrl: './user-detail-page.component.html',
@@ -23,7 +23,7 @@ export class UserDetailPageComponent implements OnInit, OnDestroy {
     this.activatedRoute.params
         .pipe(
             takeUntil(this.onDestroy$),
-            map(params => params["userId"]),
+            map(params => params.userId),
             distinctUntilChanged()
         )
         .subscribe(userId => this.userDetailUseCase.fetchUser(userId));

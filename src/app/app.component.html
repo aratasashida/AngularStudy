@@ -1,7 +1,9 @@
-<app-user-list-filter
-  [value]="userListFilter$ | async"
-  (valueChange)="setUserListFilter($event)"
-></app-user-list-filter>
-<app-user-list [users]="users$ | async"></app-user-list>
+<h1>Hello My Angular Study</h1>
+
+<nav>
+    <ul>
+        <li><a routerLink="study-refactaring/users" routerLinkActive="active">Case 1: study-refactaring</a></li>
+    </ul>
+</nav>
 
 <router-outlet></router-outlet>
