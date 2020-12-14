@@ -11,6 +11,7 @@ import { UserDetailPageComponent } from './components/study-refactaring/user-det
 import { UsersComponent } from './components/study-refactaring/users.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StudyRxjsComponent } from './components/study-rxjs/study-rxjs.component';
+import { ExplicitSubscribeComponent } from './components/study-rxjs/explicit-subscribe/explicit-subscribe.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { StudyRxjsComponent } from './components/study-rxjs/study-rxjs.component
     UsersComponent,
     PageNotFoundComponent,
     StudyRxjsComponent,
+    ExplicitSubscribeComponent,
   ],
   imports: [
     BrowserModule,
