@@ -23,7 +23,7 @@ export class UserDetailPageComponent implements OnInit, OnDestroy {
     this.activatedRoute.params
         .pipe(
             takeUntil(this.onDestroy$),
-            map(params => params["userId"]),
+            map(params => params.userId),
             distinctUntilChanged()
         )
         .subscribe(userId => this.userDetailUseCase.fetchUser(userId));
