@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { DataService } from '../../../service/data.service';
+import { map } from 'rxjs/operators';
 
 type State = {
   value: any;
@@ -15,9 +16,9 @@ export class AsyncpipeComponent {
   readonly state$: Observable<State>;
 
   constructor(private dataService: DataService) {
-    this.state$ = combineLatest(
-        [this.dataService.valueChanges], // 必要なストリームを合成する
-        ([value]) => ({ value }), // 配列からオブジェクトに変換する
-    );
+    this.state$ = this.dataService.valueChanges
+        .pipe(
+            map(value => ({value}))
+        );
   }
 }
