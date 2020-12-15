@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserDetailPageComponent } from './components/study-refactaring/user-detail-page/user-detail-page.component';
-import { StudyRefactoringComponent } from './components/study-refactaring/study-refactoring.component';
+import { UsersComponent } from './components/study-refactaring/users.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { StudyRxjsComponent } from './components/study-rxjs/study-rxjs.component';
 
 @NgModule({
   imports: [
@@ -12,13 +13,17 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
         children: [
           {
             path: 'users',
-            component: StudyRefactoringComponent
+            component: UsersComponent
           },
           {
             path: 'users/:userId',
             component: UserDetailPageComponent
           }
         ]
+      },
+      {
+        path: 'study-rxjs',
+        component: StudyRxjsComponent
       },
       {
         path: '**', component: PageNotFoundComponent

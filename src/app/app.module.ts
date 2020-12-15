@@ -8,8 +8,11 @@ import { UserListComponent } from './components/study-refactaring/user-list/user
 import { UserListFilterComponent } from './components/study-refactaring/user-list-filter/user-list-filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailPageComponent } from './components/study-refactaring/user-detail-page/user-detail-page.component';
-import { StudyRefactoringComponent } from './components/study-refactaring/study-refactoring.component';
+import { UsersComponent } from './components/study-refactaring/users.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { StudyRxjsComponent } from './components/study-rxjs/study-rxjs.component';
+import { ExplicitSubscribeComponent } from './components/study-rxjs/explicit-subscribe/explicit-subscribe.component';
+import { AsyncpipeComponent } from './components/study-rxjs/asyncpipe/asyncpipe.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +21,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     UserListComponent,
     UserListFilterComponent,
     UserDetailPageComponent,
-    StudyRefactoringComponent,
+    UsersComponent,
     PageNotFoundComponent,
+    StudyRxjsComponent,
+    ExplicitSubscribeComponent,
+    AsyncpipeComponent,
   ],
   imports: [
     BrowserModule,
