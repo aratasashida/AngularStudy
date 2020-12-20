@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserListUseCase } from '../../service/user-list.usecase';
-import { UserListFilter } from '../../models/state';
+import { UserListFilter } from '../../models/userState';
 
 @Component({
   selector: 'app-study-refactaring',

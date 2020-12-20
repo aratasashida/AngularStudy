@@ -4,7 +4,7 @@ export interface UserListFilter {
   nameFilter: string;
 }
 
-export interface State {
+export interface UserState {
   userList: {
     items: User[];
     filter: UserListFilter;
@@ -14,7 +14,7 @@ export interface State {
   };
 }
 
-export function createInitialState(): State {
+export function createInitialState(): UserState {
   return {
     userList: {
       items: [],
