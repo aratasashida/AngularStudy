@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserApiService } from './user-api.service';
-import { Store } from './store.service';
+import { StateStore } from './state-store.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ export class UserDetailUseCase {
     return this.store.select((state) => state.userDetail.user);
   }
 
-  constructor(private userApiService: UserApiService, private store: Store) {}
+  constructor(private userApiService: UserApiService, private store: StateStore) {}
 
   async fetchUser(userId: string) {
     this.store.update((state) => ({

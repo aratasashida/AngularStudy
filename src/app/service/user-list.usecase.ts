@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { User } from '../models/user';
-import { Store } from './store.service';
+import { StateStore } from './state-store.service';
 import { UserApiService } from './user-api.service';
 
 @Injectable({
@@ -26,7 +24,7 @@ export class UserListUseCase {
 
   constructor(
     private userApiService: UserApiService,
-    private userStore: Store
+    private userStore: StateStore
   ) { }
 
   async fetchUsers(): Promise<void> {
