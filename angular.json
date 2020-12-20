@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angularAfterTutorial"
+    }
+  },
+  "defaultProject": "angularAfterTutorial",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }
