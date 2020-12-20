@@ -14,14 +14,16 @@ export interface State {
   };
 }
 
-export const initialState = {
-  userList: {
-    items: [],
-    filter: {
-      nameFilter: '',
+export function createInitialState(): State {
+  return {
+    userList: {
+      items: [],
+      filter: {
+        nameFilter: '',
+      }
+    },
+    userDetail: {
+      user: null
     }
-  },
-  userDetail: {
-    user: null
-  }
-};
+  };
+}

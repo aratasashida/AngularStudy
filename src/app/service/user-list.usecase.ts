@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { StateStore } from './state-store.service';
+import { StateStore } from './state.store';
 import { UserApiService } from './user-api.service';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class UserListUseCase {
 
   get users$() {
     return this.userStore
-      .select(state => state.userList)
+      ._select(state => state.userList)
       .pipe(
         map(({ items, filter }) =>
           items.filter(user => (user.first_name + user.last_name).includes(filter.nameFilter))
@@ -19,7 +19,7 @@ export class UserListUseCase {
   }
 
   get filter$() {
-    return this.userStore.select(state => state.userList.filter);
+    return this.userStore._select(state => state.userList.filter);
   }
 
   constructor(
