@@ -1,14 +1,15 @@
-<ng-container *ngIf="user$ | async as user; else userFetching">
-    <h1>{{user.first_name}}{{user.last_name}}</h1>
-
-    <dl>
-        <dt>Email</dt>
-        <dt>{{user.email}}</dt>
-        <dt>Avatar</dt>
-        <dd><img [src]="user.avatar" alt="userAvatar"></dd>
-    </dl>
+<ng-container *ngIf="this.state$ | async as state; else loading">
+    <ng-container *ngIf="!state.isLoading">
+        <h1>{{state.user.first_name}}{{state.user.last_name}}</h1>
+        <dl>
+            <dt>Email</dt>
+            <dt>{{state.user.email}}</dt>
+            <dt>Avatar</dt>
+            <dd><img [src]="state.user.avatar" alt="userAvatar"></dd>
+        </dl>
+    </ng-container>
 </ng-container>
 
-<ng-template #userFetching>
+<ng-template #loading>
     <div>...loading</div>
 </ng-template>

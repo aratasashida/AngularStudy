@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { UserApiService } from './user-api.service';
-import { UserStateStore } from './user-state-store.service';
+import { UserStateStore } from '../store/user-state-store.service';
+import { UserStateQuery } from '../query/user-state.query';
 
 @Injectable({
     providedIn: 'root',
 })
 export class UserDetailUseCase {
     get user$() {
-        return this.userStateStore._select((state) => state.userDetail.user);
+        return this.userStateQuery.select((state) => state.userDetail.user);
     }
 
-    constructor(private userApiService: UserApiService, private userStateStore: UserStateStore) {
-    }
+    constructor(
+        private userApiService: UserApiService,
+        private userStateStore: UserStateStore,
+        private userStateQuery: UserStateQuery
+    ) {}
 
     async fetchUser(userId: string) {
         this.userStateStore.setLoading(true);
