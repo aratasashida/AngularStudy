@@ -4,4 +4,5 @@
 - Akita
 - jest
 - snapshotテスト
-- GitHubActions
+- CI (GitHubActions)
+- [WIP] CD
