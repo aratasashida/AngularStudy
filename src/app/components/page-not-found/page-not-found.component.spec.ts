@@ -16,10 +16,15 @@ describe('PageNotFoundComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('snapshot test', () => {
+    fixture.detectChanges();
+    const nativeElement = fixture.debugElement.nativeElement;
+    expect(nativeElement).toMatchSnapshot();
   });
 });
